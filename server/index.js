@@ -4,6 +4,7 @@ import admin from 'firebase-admin';
 import multer from 'multer';
 import cors from 'cors';
 import jwt from "jsonwebtoken";
+import path from "path";
 
 import * as helpers from './helpers.js';
 import * as prompts from './prompts.js';
@@ -13,7 +14,6 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAi = new GoogleGenerativeAI(process.env.GEMINIAPI);
 const model = genAi.getGenerativeModel({model:"gemini-2.5-flash-lite"});
-
 
 dotenv.config();
 
@@ -193,6 +193,11 @@ app.get("/api/favorite/res", auth.authenticate ,async (req,res) => {
     let resp = await helpers.getFavoriteResponseByUid(req.uid);
 
     res.json(resp);
+});
+
+app.use(express.static("/home/omp/websites/roastmyinterview/dist"));
+app.get("*",(req,res)=>{
+    res.sendFile("/home/omp/websites/roastmyinterview/dist/index.html");
 });
 
 app.listen(3100,()=>{
