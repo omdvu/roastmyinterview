@@ -96,7 +96,8 @@ export function buildResumeReviewPrompt(resumeText){
             "scores": {
                 "overall": number,
                 "grammar": number,
-                "coverage": number
+                "coverage": number,
+                "structured": number,
             },
             "roast": string,
             "improvements": [string],

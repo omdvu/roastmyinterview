@@ -21,7 +21,7 @@ export function authenticate (req,res,next) {
 }
 
 export async function authenticateToken (req,res,next) {
-    const token = req.params.token;
+    const token = req.query.token;
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);

@@ -7,7 +7,7 @@ import NotFound from "./interceptor/NotFound";
 import Favorites from "./pages/Favorites";
 
 function App() {
-  const api = "http://localhost:3100";
+  const api = "http://localhost:3110";
   return (
     <>
       <Routes>

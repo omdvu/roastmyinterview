@@ -200,7 +200,7 @@ app.get("*",(req,res)=>{
     res.sendFile("/home/omp/websites/roastmyinterview/dist/index.html");
 });
 
-app.listen(3100,()=>{
-    console.log(`Server running on port 3100`);
+app.listen(3110,()=>{
+    console.log(`Server running on port 3110`);
 })
 
